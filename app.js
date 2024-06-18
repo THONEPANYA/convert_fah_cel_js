@@ -1,21 +1,25 @@
-function toCelsius()
+function toCelsius(fahrenheit)
 {
-    let fahrenheit = prompt("Enter Fahrenhiet:")
     let value = (fahrenheit - 32) * 5 / 9
-
-    document.getElementById("answer-section").innerHTML = value.toFixed(2) + "C" + "<br>";
+    return value.toFixed(2) + "C";
 
 }
 
-function toFahrenheit()
+function display(elementId, value)
 {
-    let celsius = prompt("Enter Celsius")
+    document.getElementById(elementId).innerHTML = value
+}
+
+function toFahrenheit(celsius)
+{
     let valueF = (celsius * 9/5) + 32
 
-    document.getElementById("fahrenheit").innerHTML = valueF.toFixed(2) + "F" + "<br>";
+    return valueF.toFixed(2) + "F";
 
 }
 
-toFahrenheit()
+alert(toCelsius(150))
+display("toCelsius", toCelsius(150))
 
-toCelsius()
+alert(toFahrenheit(150))
+display("toFahrenheit", toFahrenheit(150))
